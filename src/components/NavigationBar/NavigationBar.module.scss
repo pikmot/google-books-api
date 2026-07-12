@@ -1,0 +1,41 @@
+@use "../../sass/colors" as *;
+@use "../../sass/fonts" as *;
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+
+  gap: 1rem;
+
+  padding: 1rem;
+  margin: 0;
+
+  background-color: $header-bg-color;
+
+  font-family: $header-font;
+
+  &__link {
+    color: $header-font-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $header-font-hover;
+    }
+  }
+
+  &__other {
+    background-color: white;
+    margin-right: auto;
+    // color: rebeccapurple;
+    &__img {
+      width: 2rem;
+      //   fill: #4285f4;
+      // color: #4285f4;
+      //   outline: #4285f4;
+      //   background-color: transparent;
+      //   margin-right: auto;
+    }
+  }
+}

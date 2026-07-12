@@ -1,0 +1,13 @@
+@use "../../sass/fonts" as *;
+
+.about {
+  &__header {
+    font-family: $header-font;
+    text-align: center;
+  }
+
+  &__body {
+    font-family: $body-font;
+    text-align: center;
+  }
+}

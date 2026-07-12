@@ -1,0 +1,17 @@
+.bookList {
+  //   background-color: red;
+
+  width: 90%;
+  height: 70vh;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 5px;
+
+  margin-top: 1rem;
+}

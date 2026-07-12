@@ -2,12 +2,6 @@
 const key = import.meta.env.VITE_API_KEY;
 
 export const getBooksData = async (searchTerm = "", limit = 5) => {
-  //   console.log(limit, searchTerm, key);
-
-  //   const response = await fetch(
-  //     `https://www.googleapis.com/books/v1/volumes?q=test&key=AIzaSyB2VW7IQos7AxJdrv0H4bey0Cl_67kZ6Pw&maxResults=4`,
-  //   );
-
   const response = await fetch(
     `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&key=${key}&maxResults=${limit}`,
   );

@@ -11,6 +11,10 @@ import { useState, useEffect } from "react";
 const HomePage = () => {
   const [input, setInput] = useState("");
 
+  //pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPageLimit, setCurrentPageLimit] = useState(5);
+
   console.log(input);
 
   return (
@@ -18,6 +22,12 @@ const HomePage = () => {
       <h1 className={homePageClasses.homePage__header}>Google Books Search</h1>
       <UncontrolledForm updateInput={setInput} />
       {/* <p className={homePageClasses.homePage__body}>Search any book name...</p> */}
+      <select>
+        <option>5</option>
+        <option>10</option>
+        <option>20</option>
+        <option>30</option>
+      </select>
       <BooksContainer input={input} />
     </div>
   );

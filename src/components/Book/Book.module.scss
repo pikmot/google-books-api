@@ -1,6 +1,9 @@
 @use "../../sass/fonts" as *;
 
 .book {
+  width: 250px;
+  height: 300px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,25 +11,31 @@
 
   border: 3px solid black;
 
-  padding: 1rem;
+  border-radius: 5px;
+  padding: 5px;
+
+  transition:
+    transform 0.25s ease-in-out,
+    box-shadow 0.25s ease-in-out;
 
   &:hover {
-    transform: scale(1.2);
+    transform: scale(1.05);
     box-shadow: 0px 10px 31px 19px rgba(0, 0, 0, 0.5);
+    background-color: rgba(172, 255, 47, 0.1);
   }
 
   &__img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 120px;
 
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
   &__text {
     font-family: $body-font;
 
     text-align: center;
 
-    width: 100px;
+    width: 90%;
   }
   &__header {
     font-family: $header-font;
@@ -36,6 +45,6 @@
 
     text-align: center;
 
-    width: 100px;
+    width: 90%;
   }
 }

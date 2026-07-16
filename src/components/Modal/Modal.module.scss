@@ -1,0 +1,73 @@
+@use "../../sass/fonts.scss" as *;
+
+.modal {
+  height: 800px;
+  width: 600px;
+
+  // background-color: black;
+
+  border-radius: 10px;
+
+  //stops overflow of border
+  scrollbar-gutter: stable both-edges;
+  scrollbar-color: black white;
+
+  //remove arrows
+
+  // &::-webkit-scrollbar {
+  // }
+
+  // &::-webkit-scrollbar-button {
+  //   display: none;
+  //   width: 0;
+  //   height: 0;
+  // }
+
+  // &::-webkit-scrollbar-thumb {
+  // }
+
+  &::backdrop {
+    background-color: rgba(128, 128, 128, 0.39);
+    backdrop-filter: blur(5px);
+  }
+
+  &__container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+    align-content: center;
+
+    &__img {
+      //1:1.5
+      // max-width: 100%;
+
+      width: 200px;
+      height: 300px;
+
+      margin-bottom: 0.5rem;
+    }
+
+    &__text {
+      font-family: $body-font;
+
+      text-align: center;
+
+      width: 90%;
+    }
+    &__header {
+      font-family: $header-font;
+      font-weight: bold;
+
+      margin: 0;
+
+      text-align: center;
+
+      width: 90%;
+    }
+  }
+}

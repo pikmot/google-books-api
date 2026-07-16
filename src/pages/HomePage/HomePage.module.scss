@@ -17,3 +17,9 @@
     text-align: center;
   }
 }
+
+html {
+  // scrollbar-gutter: stable both-edges;
+  scrollbar-color: black white;
+  scrollbar-width: 10px;
+}

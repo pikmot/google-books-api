@@ -1,7 +1,11 @@
 //grabbin key from .env file
 const key = import.meta.env.VITE_API_KEY;
 
-export const getBooksData = async (searchTerm = "", limit = 5) => {
+export const getBooksData = async (
+  searchTerm = "",
+  startIndex = 0,
+  limit = 5,
+) => {
   const response = await fetch(
     `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&key=${key}&maxResults=${limit}`,
   );

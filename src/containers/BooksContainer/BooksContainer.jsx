@@ -1,13 +1,16 @@
 import BookList from "../../components/BookList/BookList";
 import Modal from "../../components/Modal/Modal";
+import PageCounter from "../../components/PageCounter/PageCounter.jsx";
 
 import booksContainerClasses from "./BooksContainer.module.scss";
+
+import pageCounterClasses from "../../components/PageCounter/PageCounter.module.scss";
 
 import { getBooksData } from "../../js/data-fetch.js";
 
 import { useEffect, useState, useRef } from "react";
 
-export default function BooksContainer({ input }) {
+export default function BooksContainer({ input, pageLimit }) {
   //data test
   // const data = [
   //   { author: "Author 1", title: "title 1", description: "description 1" },
@@ -24,6 +27,12 @@ export default function BooksContainer({ input }) {
   // const [searchLimit, setSearchLimit] = useState(0);
   const [currentBooks, setCurrentBooks] = useState([]);
   const [currentBooksLong, setCurrentBooksLong] = useState([]);
+
+  //current Page
+  const [currentPage, setCurrentPage] = useState(1);
+
+  //current Max pages -> based on page limit
+  const [finalPage, setFinalPage] = useState(0);
 
   //display modal
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -48,10 +57,23 @@ export default function BooksContainer({ input }) {
     console.log(status);
     setStatus("LOADING");
     console.log(status);
-    const booksData = getBooksData(input, 0, 7)
+
+    console.log(input, (currentPage - 1) * pageLimit, pageLimit, currentPage);
+
+    const booksData = getBooksData(
+      input,
+      (currentPage - 1) * pageLimit,
+      pageLimit,
+    )
       .then((data) => {
         console.log(data);
         console.log(data["items"]);
+
+        //setting maxPages
+        setFinalPage(Math.ceil(data["totalItems"] / pageLimit));
+
+        //setting initial page
+        // setCurrentPage(1);
 
         console.log(currentBooks);
         console.log(
@@ -165,7 +187,7 @@ export default function BooksContainer({ input }) {
 
         setStatus("ERROR");
       });
-  }, [input]);
+  }, [input, pageLimit, currentPage]);
 
   if (status === "ERROR") return <p>INVALID INPUT : TRY AGAIN</p>;
 
@@ -182,6 +204,13 @@ export default function BooksContainer({ input }) {
           modalIsOpen={modalIsOpen}
           setModalIsOpen={setModalIsOpen}
           details={modalData}
+        />
+
+        <PageCounter
+          className={pageCounterClasses.container}
+          currentPage={currentPage}
+          finalPage={finalPage}
+          setCurrentPage={setCurrentPage}
         />
 
         <BookList

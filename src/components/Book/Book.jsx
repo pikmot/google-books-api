@@ -12,7 +12,7 @@ function Book({
   setModalDetails,
 }) {
   const handleClick = () => {
-    console.log(image, author, title, description);
+    // console.log(image, author, title, description);
 
     if (modalIsOpen) {
       handleModal(false);

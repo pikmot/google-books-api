@@ -17,10 +17,10 @@ const HomePage = () => {
   //store change of data
   const handleChange = (event) => {
     setCurrentPageLimit(event.target.value);
-    console.log(currentPageLimit);
+    //console.log(currentPageLimit);
   };
 
-  console.log(input);
+  //console.log(input);
 
   return (
     <div className={homePageClasses.homePage}>

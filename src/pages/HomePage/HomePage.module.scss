@@ -1,10 +1,12 @@
-@use "../../sass/fonts" as *;
+@use "../../sass/variables/fonts" as *;
+@use "../../sass/variables/colors" as *;
+
+@use "../../sass/mixins/mixins.scss";
 
 .homePage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  // background-color: red;
+  @include mixins.flexbox(column);
+  // @include mixins.dimension(100%, 100%);
+  // background-color: $header-font-color;
 
   &__header {
     font-family: $header-font;
@@ -24,6 +26,6 @@
 
 html {
   // scrollbar-gutter: stable both-edges;
-  scrollbar-color: black white;
+  scrollbar-color: $header-bg-color $header-font-color;
   scrollbar-width: 10px;
 }

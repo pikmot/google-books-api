@@ -1,30 +1,15 @@
-@use "../../sass/fonts.scss" as *;
+@use "../../sass/variables/fonts.scss" as *;
+@use "../../sass/variables/colors.scss" as *;
+@use "../../sass/mixins/mixins.scss";
 
 .modal {
-  height: 800px;
-  width: 600px;
-
-  // background-color: black;
+  @include mixins.dimension(800px, 600px);
 
   border-radius: 10px;
 
   //stops overflow of border
   scrollbar-gutter: stable both-edges;
-  scrollbar-color: black white;
-
-  //remove arrows
-
-  // &::-webkit-scrollbar {
-  // }
-
-  // &::-webkit-scrollbar-button {
-  //   display: none;
-  //   width: 0;
-  //   height: 0;
-  // }
-
-  // &::-webkit-scrollbar-thumb {
-  // }
+  scrollbar-color: $header-bg-color $header-font-color;
 
   &::backdrop {
     background-color: rgba(128, 128, 128, 0.39);
@@ -32,15 +17,10 @@
   }
 
   &__container {
-    width: 100%;
+    @include mixins.dimension(100%, auto);
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    flex-wrap: wrap;
-    align-content: center;
+    @include mixins.flexbox(column);
+    @include mixins.wrap();
 
     &__img {
       //1:1.5

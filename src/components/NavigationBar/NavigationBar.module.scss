@@ -1,11 +1,10 @@
-@use "../../sass/colors" as *;
-@use "../../sass/fonts" as *;
+@use "../../sass/variables/colors" as *;
+@use "../../sass/variables/fonts" as *;
+
+@use "../../sass/mixins/mixins.scss";
 
 .nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: end;
+  @include mixins.flexbox(row, end, center);
 
   gap: 1rem;
 
@@ -28,14 +27,9 @@
   &__other {
     background-color: white;
     margin-right: auto;
-    // color: rebeccapurple;
+
     &__img {
       width: 2rem;
-      //   fill: #4285f4;
-      // color: #4285f4;
-      //   outline: #4285f4;
-      //   background-color: transparent;
-      //   margin-right: auto;
     }
   }
 }

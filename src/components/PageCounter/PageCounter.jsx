@@ -2,12 +2,12 @@ import React from "react";
 
 const PageCounter = ({ currentPage = -1, finalPage = -1, setCurrentPage }) => {
   const onDecrement = () => {
-    console.log("Minus");
+    //console.log("Minus");
     setCurrentPage(currentPage - 1);
   };
 
   const onIncrement = () => {
-    console.log("Add");
+    //console.log("Add");
     setCurrentPage(currentPage + 1);
   };
 

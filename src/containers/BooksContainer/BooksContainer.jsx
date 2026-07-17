@@ -47,18 +47,18 @@ export default function BooksContainer({ input, pageLimit }) {
   useEffect(() => {
     // setStatus("IDLE");
 
-    console.log(input);
+    //console.log(input);
     if (input === "") {
       setStatus("IDLE");
-      console.log("INITIAL EMPTY");
+      //console.log("INITIAL EMPTY");
       return;
     }
 
-    console.log(status);
+    //console.log(status);
     setStatus("LOADING");
-    console.log(status);
+    //console.log(status);
 
-    console.log(input, (currentPage - 1) * pageLimit, pageLimit, currentPage);
+    //console.log(input, (currentPage - 1) * pageLimit, pageLimit, currentPage);
 
     const booksData = getBooksData(
       input,
@@ -66,8 +66,8 @@ export default function BooksContainer({ input, pageLimit }) {
       pageLimit,
     )
       .then((data) => {
-        console.log(data);
-        console.log(data["items"]);
+        //console.log(data);
+        //console.log(data["items"]);
 
         //setting maxPages
         setFinalPage(Math.ceil(data["totalItems"] / pageLimit));
@@ -75,43 +75,43 @@ export default function BooksContainer({ input, pageLimit }) {
         //setting initial page
         // setCurrentPage(1);
 
-        console.log(currentBooks);
-        console.log(
-          data["items"].map((book) => {
-            let authorName = "";
-            let titleName = "";
-            let descriptionName = "";
-            let img = null;
+        //console.log(currentBooks);
+        //console.log(
+        //   data["items"].map((book) => {
+        //     let authorName = "";
+        //     let titleName = "";
+        //     let descriptionName = "";
+        //     let img = null;
 
-            if (book["volumeInfo"]["authors"] !== undefined) {
-              authorName =
-                book["volumeInfo"]["authors"].join(", ").slice(0, 20) + "...";
-            }
+        //     if (book["volumeInfo"]["authors"] !== undefined) {
+        //       authorName =
+        //         book["volumeInfo"]["authors"].join(", ").slice(0, 20) + "...";
+        //     }
 
-            if (book["volumeInfo"]["title"] !== undefined) {
-              titleName = book["volumeInfo"]["title"].slice(0, 20) + "...";
-            }
+        //     if (book["volumeInfo"]["title"] !== undefined) {
+        //       titleName = book["volumeInfo"]["title"].slice(0, 20) + "...";
+        //     }
 
-            if (book["volumeInfo"]["description"] !== undefined) {
-              descriptionName =
-                book["volumeInfo"]["description"].slice(0, 20) + "...";
-            }
+        //     if (book["volumeInfo"]["description"] !== undefined) {
+        //       descriptionName =
+        //         book["volumeInfo"]["description"].slice(0, 20) + "...";
+        //     }
 
-            if (
-              book["volumeInfo"]?.["imageLinks"]?.["smallThumbnail"] !==
-              undefined
-            ) {
-              img = book["volumeInfo"]["imageLinks"]["smallThumbnail"];
-            }
+        //     if (
+        //       book["volumeInfo"]?.["imageLinks"]?.["smallThumbnail"] !==
+        //       undefined
+        //     ) {
+        //       img = book["volumeInfo"]["imageLinks"]["smallThumbnail"];
+        //     }
 
-            return {
-              author: authorName,
-              title: titleName,
-              description: descriptionName,
-              image: img,
-            };
-          }),
-        );
+        //     return {
+        //       author: authorName,
+        //       title: titleName,
+        //       description: descriptionName,
+        //       image: img,
+        //     };
+        //   }),
+        // );
 
         setCurrentBooksLong(
           data["items"].map((book) => {
@@ -177,13 +177,13 @@ export default function BooksContainer({ input, pageLimit }) {
           }),
         );
 
-        console.log(currentBooks);
+        //console.log(currentBooks);
 
         setStatus("SUCCESS");
       })
       .catch((error) => {
-        console.log(error);
-        console.log("ERROR");
+        //console.log(error);
+        //console.log("ERROR");
 
         setStatus("ERROR");
       });
@@ -196,7 +196,7 @@ export default function BooksContainer({ input, pageLimit }) {
   if (status === "LOADING") return <p>DATA Loading...</p>;
 
   if (status === "SUCCESS") {
-    console.log(currentBooks);
+    //console.log(currentBooks);
     return (
       <div className={booksContainerClasses.container}>
         <Modal

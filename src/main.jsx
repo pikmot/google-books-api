@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
-import "./sass/_normalize.scss";
+import "./sass/variables/_normalize.scss";
 
 import App from "./App.jsx";
 

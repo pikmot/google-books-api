@@ -21,7 +21,7 @@ export default function Modal({
   }, [modalIsOpen]);
 
   const handleClick = () => {
-    console.log(reference.current);
+    //console.log(reference.current);
     reference.current.close();
     setModalIsOpen(false);
   };

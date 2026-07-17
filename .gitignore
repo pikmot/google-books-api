@@ -32,6 +32,20 @@ out/
 coverage/
 .nyc_output/
 
+# Vitest artifacts and cache
+.vitest/
+
+# Vitest coverage reports
+coverage/
+
+# Ignore specific rtl file or folder name
+rtl
+*rtl*
+
+# Ignore specific rtl directories
+/rtl/
+**/rtl/
+
 # IDE and System files (Optional but recommended)
 .DS_Store
 Thumbs.db

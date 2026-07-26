@@ -27,3 +27,4 @@ import "./sass/variables/_normalize.scss";
 
 - general advice, i tried using actual readable names
 - up to standard? anything i need to do that stands out as not acceptable? MVP + bonus attempted
+  - same as joke list project -> didn't feel too bad

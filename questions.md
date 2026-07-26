@@ -22,3 +22,8 @@ NOT
 ```jsx
 import "./sass/variables/_normalize.scss";
 ```
+
+- had to create this vite.config.js for testing? is this okay?
+
+- general advice, i tried using actual readable names
+- up to standard? anything i need to do that stands out as not acceptable? MVP + bonus attempted

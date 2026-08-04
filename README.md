@@ -9,6 +9,7 @@ Project invovles fetching data from Google Books API and displays a grid of book
 
 Home Screen | About Full
 
+<div width="100%">
 <img src="./src/assets/images/HomeScreen.png" width=49% >
 <img src="./src/assets/images/AboutScreen.png" width=49% >
 
@@ -16,6 +17,7 @@ Home Screen Search | Home Screen Modal
 
 <img src="./src/assets/images/HomeScreenSearch.png" width=49% >
 <img src="./src/assets/images/HomeScreenModal.png" width=49% >
+<div>
 
 ## MVP
 
